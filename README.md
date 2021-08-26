@@ -10,10 +10,14 @@ sudo apt-get install clang-12 lld-12 -y
 git clone https://github.com/mwash-1/ccminer-rk3328.git
 cd ccminer-rk3328
 chmod +x build.sh configure.sh autogen.sh
-chmod +x configure.sh
-chmod +x autogen.sh
 ./build.sh
 ```
+sudo vi /etc/systemd/system/verus.service
+<contents>
+systemctl daemon-reload
+systemctl enable verus
+systemctl start verus
+journalctl -f -u verus
 
 Compile on Linux
 ----------------
